@@ -1,8 +1,11 @@
 ---
 // note on margins for each layout
-// default = mobile : margins = 12
-// md+ = tablet : margins = 32
-// xl+ = desktop : container size = 1280px
+// default = mobile : margins = 12 / gutter 12
+// md+ = tablet : margins = 32 / 16
+// xl+ = desktop : container size = 1280px / 20
+
+import "@fontsource-variable/inter";
+import Hero from "@components/hero/Hero.astro";
 ---
 
 <html data-theme="night" lang="en">
@@ -18,10 +21,10 @@
     <title>Astro</title>
   </head>
   <body
-    class="max-w-screen-xl mx-3 md:mx-8 xl:mx-auto pt-10 flex flex-col justify-between min-h-screen"
+    class="max-w-screen-xl mx-4 md:mx-8 xl:mx-auto pt-10 flex flex-col justify-between min-h-screen antialiased"
   >
     <main class="flex flex-col gap-16">
-      <header id="hero">Hero</header>
+      <Hero />
       <div class="flex flex-col gap-8">
         <section id="about">About</section>
         <section id="skills">Skills</section>

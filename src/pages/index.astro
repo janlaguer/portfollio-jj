@@ -5,7 +5,8 @@
 // xl+ = desktop : container size = 1280px / 20
 
 import "@fontsource-variable/inter";
-import Hero from "@components/hero/Hero.astro";
+import Hero from "@components/main/Hero.astro";
+import About from "@components/main/About.astro";
 ---
 
 <html data-theme="night" lang="en">
@@ -26,7 +27,7 @@ import Hero from "@components/hero/Hero.astro";
     <main class="flex flex-col gap-16">
       <Hero />
       <div class="flex flex-col gap-8">
-        <section id="about">About</section>
+        <About />
         <section id="skills">Skills</section>
         <section id="experiences">Experiences</section>
         <section id="projects">Projects</section>

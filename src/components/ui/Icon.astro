@@ -17,6 +17,7 @@ const { src, alt, height, type, content } = Astro.props;
     </div>
   )
 }
+{!type && <Image {...{ src, alt, height }} />}
 
 <style>
   img {

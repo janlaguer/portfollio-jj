@@ -10,6 +10,7 @@ import About from "@components/main/About.astro";
 import Skills from "@components/main/Skills/Skills.astro";
 import Experiences from "@components/main/Experience/Experiences.astro";
 import Projects from "@components/main/Projects/Projects.astro";
+import Footer from "@components/main/Footer.astro";
 ---
 
 <html data-theme="night" lang="en">
@@ -25,7 +26,7 @@ import Projects from "@components/main/Projects/Projects.astro";
     <title>Astro</title>
   </head>
   <body
-    class="max-w-screen-xl mx-4 md:mx-8 xl:mx-auto pt-10 flex flex-col justify-between min-h-screen antialiased"
+    class="max-w-screen-xl mx-4 md:mx-8 xl:mx-auto pt-10 flex flex-col gap-16 justify-between min-h-screen antialiased"
   >
     <main class="flex flex-col gap-16">
       <Hero />
@@ -37,6 +38,6 @@ import Projects from "@components/main/Projects/Projects.astro";
         <!-- <section id="blog">Blog</section> -->
       </div>
     </main>
-    <footer>Footer</footer>
+    <Footer />
   </body>
 </html>

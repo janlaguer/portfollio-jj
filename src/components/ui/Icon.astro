@@ -1,23 +1,23 @@
 ---
 import { Image } from "astro:assets";
-const { src, alt, height, type, content } = Astro.props;
+const { src, alt, height, type, content, loading = "lazy" } = Astro.props;
 ---
 
 {
   type == "link" && (
     <a href={content} target="_blank">
-      <Image {...{ src, alt, height }} />
+      <Image {...{ src, alt, height, loading }} />
     </a>
   )
 }
 {
   type == "hover" && (
     <div class="tooltip" data-tip={content}>
-      <Image {...{ src, alt, height }} />
+      <Image {...{ src, alt, height, loading }} />
     </div>
   )
 }
-{!type && <Image {...{ src, alt, height }} />}
+{!type && <Image {...{ src, alt, height, loading }} />}
 
 <style>
   img {

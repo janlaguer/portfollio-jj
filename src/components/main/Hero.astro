@@ -1,28 +1,5 @@
 ---
-import Icon from "@components/ui/Icon.astro";
-
-import email from "@assets/icons/email.svg";
-import github from "@assets/icons/github.svg";
-import linkedin from "@assets/icons/linkedin.svg";
-import location from "@assets/icons/location.svg";
-import phone from "@assets/icons/phone.svg";
-
-const iconList = [email, github, linkedin, phone, location];
-const iconType = ["link", "link", "link", "hover", "hover"];
-const iconContent = [
-  "mailto:laguer.janjozef@gmail.com",
-  "https://www.github.com",
-  "https://www.linkedin.com",
-  "09177961513",
-  "Metro Manila, Philippines",
-];
-const iconAttributes = iconList.map((icon, index) => ({
-  src: icon,
-  alt: `${icon.src.split("?")[0].split("/").splice(-1)} icon`,
-  height: 24,
-  type: iconType[index],
-  content: iconContent[index],
-}));
+import ContactIcons from "./ContactIcons.astro";
 ---
 
 <header id="hero" class="flex flex-col gap-8">
@@ -32,7 +9,5 @@ const iconAttributes = iconList.map((icon, index) => ({
     <p>Developing simple ideas into digital experiences</p>
   </div>
 
-  <div id="contact-icons" class="flex gap-4 ml-1">
-    {iconAttributes.map((attrs) => <Icon {...attrs} />)}
-  </div>
+  <ContactIcons loading="eager" />
 </header>

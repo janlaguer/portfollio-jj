@@ -1,0 +1,28 @@
+---
+import okok from "@assets/imgs/okok.ph-full.webp";
+import sweetHaven from "@assets/imgs/sweet-haven-full.webp";
+import ProjectBlock from "./ProjectBlock.astro";
+
+const projects = [
+  {
+    title: "OK-OK",
+    desc: "Landing page for OK-OK which lets users sign up for updates and get news on the happenings for the startup. Created using Next.js and React with MaterialUI.",
+    img: okok,
+  },
+  {
+    title: "Sweet Haven",
+    desc: "This lets users more easily know about this bakery and fully functions as a way for users to order from them. Created using Next.js and React with MaterialUI. The order form uses JotForm as a base and connects to their spreadsheet.",
+    img: sweetHaven,
+  },
+];
+---
+
+<section id="projects">
+  <div class="px-4 py-6 -mx-4 bg-slate-900/90 backdrop-blur-sm sticky top-0">
+    <h2 class="font-medium tracking-wide">PROJECTS</h2>
+  </div>
+
+  <div class="flex flex-col gap-8">
+    {projects.map((project) => <ProjectBlock {...project} />)}
+  </div>
+</section>

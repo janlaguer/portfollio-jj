@@ -1,0 +1,54 @@
+---
+import ExperienceBlock from "./ExperienceBlock.tsx";
+import type { ExperienceProps } from "./ExperienceBlockProps.ts";
+
+const experiences: ExperienceProps[] = [
+  {
+    title: "Frontend Developer",
+    company: "OK-OK",
+    startDate: "06/2022",
+    endDate: "08/2023",
+    tags: "Typescript Next.js MaterialUI React Git HTML CSS".split(" "),
+    brief:
+      "Built and maintained the landing page by turning proposed designs to responsive code for both mobile and desktop using React and Next.js. Added analytics and adapted the website for AB testing using Cloudflare.",
+  },
+  {
+    title: "Backend Developer",
+    company: "Google Developer Student Clubs - Loyola",
+    startDate: "10/2021",
+    endDate: "05/2022",
+    tags: "Python Django React PostgreSQL HTML CSS Git".split(" "),
+    brief:
+      "Built the API for PostgreSQL database using Axios and Django-REST framework. Worked closely with the frontend developers to determine if a solution should be on the frontend or the backend.",
+  },
+  {
+    title: "Data and Analytics Office Intern",
+    company: "Novare Technologies, Inc.",
+    startDate: "07/2021",
+    endDate: "08/2021",
+    tags: "Python matplotlib seaborn Git".split(" "),
+    brief:
+      "Created internal software utilites and provided data analysis for different project enhancement initiatives. Created visualizations for projects and analytics using matplotlib and seaborn",
+  },
+];
+---
+
+<section id="experiences">
+  <div class="px-4 py-6 -mx-4 bg-slate-900/90 backdrop-blur-sm sticky top-0">
+    <h2 class="font-medium tracking-wide">EXPERIENCES</h2>
+  </div>
+  <div class="flex flex-col gap-8">
+    {
+      experiences.map(({ title, company, startDate, endDate, brief, tags }) => (
+        <ExperienceBlock
+          title={title}
+          company={company}
+          startDate={startDate}
+          endDate={endDate}
+          brief={brief}
+          tags={tags}
+        />
+      ))
+    }
+  </div>
+</section>

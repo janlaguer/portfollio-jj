@@ -1,10 +1,11 @@
 ---
-import ExperienceBlock from "./ExperienceBlock.tsx";
 import type { ExperienceProps } from "./ExperienceBlockProps.ts";
+import ExperienceSection from "./Experiences";
 
 const experiences: ExperienceProps[] = [
   {
     title: "Frontend Developer",
+    id: "fdokok",
     company: "OK-OK",
     startDate: "06/2022",
     endDate: "08/2023",
@@ -14,6 +15,7 @@ const experiences: ExperienceProps[] = [
   },
   {
     title: "Backend Developer",
+    id: "bdgdscl",
     company: "Google Developer Student Clubs - Loyola",
     startDate: "10/2021",
     endDate: "05/2022",
@@ -25,6 +27,7 @@ const experiences: ExperienceProps[] = [
   },
   {
     title: "Data and Analytics Office Intern",
+    id: "daointi",
     company: "Novare Technologies, Inc.",
     startDate: "07/2021",
     endDate: "08/2021",
@@ -39,18 +42,5 @@ const experiences: ExperienceProps[] = [
   <div class="px-4 py-6 -mx-4 bg-slate-900/90 backdrop-blur-sm sticky top-0">
     <h2 class="font-medium tracking-wide">EXPERIENCES</h2>
   </div>
-  <div class="flex flex-col gap-8">
-    {
-      experiences.map(({ title, company, startDate, endDate, brief, tags }) => (
-        <ExperienceBlock
-          title={title}
-          company={company}
-          startDate={startDate}
-          endDate={endDate}
-          brief={brief}
-          tags={tags}
-        />
-      ))
-    }
-  </div>
+  <ExperienceSection client:visible experiences={experiences} />
 </section>

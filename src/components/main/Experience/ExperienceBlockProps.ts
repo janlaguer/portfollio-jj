@@ -5,4 +5,5 @@ export interface ExperienceProps {
   company: string;
   brief: string;
   tags?: string[];
+  id: string;
 }

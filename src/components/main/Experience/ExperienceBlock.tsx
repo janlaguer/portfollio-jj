@@ -8,9 +8,10 @@ const ExperienceBlock: React.FC<ExperienceProps> = ({
   company,
   brief,
   tags,
+  id,
 }: ExperienceProps) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div key={id} className="flex flex-col gap-2">
       <div>
         <p className="font-extralight">
           {startDate} - {endDate}
@@ -22,8 +23,10 @@ const ExperienceBlock: React.FC<ExperienceProps> = ({
         </h3>
         <p className="font-light">{brief}</p>
         <div className="flex gap-2 flex-wrap">
-          {tags?.map((tag) => (
-            <span className="badge badge-outline badge-primary">{tag}</span>
+          {tags?.map((tag, index) => (
+            <span key={index} className="badge badge-outline badge-primary">
+              {tag}
+            </span>
           ))}
         </div>
       </div>

@@ -79,7 +79,7 @@
 
 <style>
   a {
-    @apply text-gray-600 transition-all;
+    @apply text-neutral-400 transition-all;
   }
 
   .current {

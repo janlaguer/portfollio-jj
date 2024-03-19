@@ -2,21 +2,30 @@
   import { onMount } from "svelte";
 
   const sections = document.querySelectorAll(
-    "#about, #skills, #experiences, #projects"
+    "#about, #skills, #experiences, #projects, #blogs"
   );
 
-  let aboutLink, skillslink, experiencesLink, projectsLink;
+  let aboutLink, skillslink, experiencesLink, projectsLink, blogsLink;
   let hasMounted = false;
   const linkVisibilityMap = {};
 
   onMount(() => {
-    [aboutLink, skillslink, experiencesLink, projectsLink].map((link) => {
+    const headerRefs = [
+      aboutLink,
+      skillslink,
+      experiencesLink,
+      projectsLink,
+      blogsLink,
+    ];
+
+    headerRefs.map((link) => {
       linkVisibilityMap[link.id] = {
         isIntersecting: false,
         show: false,
         ref: link,
       };
     });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.map((entry) => {
@@ -53,28 +62,39 @@
     bind:this={aboutLink}
     class:current={hasMounted ? linkVisibilityMap[aboutLink.id].show : false}
     id="aboutlink"
-    href="/#about">- ABOUT</a
-  >
+    href="/#about"
+    >- ABOUT
+  </a>
   <a
     bind:this={skillslink}
     class:current={hasMounted ? linkVisibilityMap[skillslink.id].show : false}
     id="skillslink"
-    href="/#skills">- SKILLS</a
-  >
+    href="/#skills"
+    >- SKILLS
+  </a>
   <a
     bind:this={experiencesLink}
     class:current={hasMounted
       ? linkVisibilityMap[experiencesLink.id].show
       : false}
     id="experienceslink"
-    href="/#experiences">- EXPERIENCES</a
-  >
+    href="/#experiences"
+    >- EXPERIENCES
+  </a>
   <a
     bind:this={projectsLink}
     class:current={hasMounted ? linkVisibilityMap[projectsLink.id].show : false}
     id="projectslink"
-    href="/#projects">- PROJECTS</a
-  >
+    href="/#projects"
+    >- PROJECTS
+  </a>
+  <a
+    bind:this={blogsLink}
+    class:current={hasMounted ? linkVisibilityMap[blogsLink.id].show : false}
+    id="blogslink"
+    href="/#blogs"
+    >- BLOGS
+  </a>
 </div>
 
 <style>

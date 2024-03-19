@@ -1,0 +1,69 @@
+---
+import "@fontsource-variable/inter";
+const { frontmatter, headings, url } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth scroll-pt-10">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title} - Jan Jozef R. Laguer</title>
+  </head>
+
+  <body>
+    <nav class="bg-slate-900/90 backdrop-blur-sm sticky top-0 h-16 z-50">
+      <div class="flex justify-between max-w-screen-lg mx-auto p-4">
+        <h2 class="font-extrabold text-xl tracking-tight">
+          <a href="/">JJ Laguer</a>
+        </h2>
+      </div>
+    </nav>
+    <main class="flex justify-center gap-2 md:divide-x-2 md:divide-slate-800">
+      <article class="prose container p-10">
+        <div class="flex gap-4 items-baseline">
+          <div class="avatar placeholder">
+            <div class="bg-neutral text-neutral-content rounded-full w-12">
+              <span class="text-xl">{frontmatter.author[0]}</span>
+            </div>
+          </div>
+          <p>{frontmatter.author}</p>
+          <p class="font-extralight text-xs">Posted on: {frontmatter.date}</p>
+        </div>
+
+        <h1>{frontmatter.title}</h1>
+        <slot />
+      </article>
+
+      <aside class="min-h-screen p-4 hidden md:block">
+        <div class="sticky gap-1 top-20 flex flex-col">
+          <h2 class="font-medium text-xl">On this page:</h2>
+          {
+            headings.map(({ depth, slug, text }) => (
+              <a
+                href={`${url}#${slug}`}
+                class={`depth-${depth - 1} font-light tracking-wide text-sm`}
+              >
+                {text}
+              </a>
+            ))
+          }
+        </div>
+      </aside>
+    </main>
+  </body>
+
+  <style>
+    .depth-1 {
+      @apply pl-4;
+    }
+    .depth-2 {
+      @apply pl-8;
+    }
+  </style>
+</html>

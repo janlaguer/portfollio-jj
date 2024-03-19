@@ -1,0 +1,32 @@
+---
+const posts = await Astro.glob("../../../pages/blog/*.md");
+const postsFrontmatter = posts.map((post) => ({
+  post: post.frontmatter,
+  url: post.url,
+}));
+---
+
+<section id="blogs">
+  <div
+    class="px-4 py-6 -mx-4 bg-slate-900/90 backdrop-blur-sm sticky top-0 xl:hidden"
+  >
+    <h2 class="font-medium tracking-wide">BLOG</h2>
+  </div>
+  <div
+    class="flex flex-col gap-8 xl:*:hover:brightness-50 xl:hover:*:brightness-105 xl:hover:*:bg-slate-800"
+  >
+    {
+      postsFrontmatter.map(({ post, url }) => (
+        <div class="rounded transition-all xl:p-4">
+          <a href={url}>
+            <div class="flex flex-col-reverse">
+              <h2 class="font-medium tracking-wide text-lg">{post.title}</h2>
+              <p class="font-extralight text-xs">{post.date}</p>
+            </div>
+            <p class="font-light">{post.summary}</p>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

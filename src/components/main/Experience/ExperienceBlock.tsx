@@ -11,13 +11,16 @@ const ExperienceBlock: React.FC<ExperienceProps> = ({
   id,
 }: ExperienceProps) => {
   return (
-    <div key={id} className="flex flex-col gap-2">
-      <div>
+    <div
+      key={id}
+      className="flex flex-col gap-2 xl:grid xl:grid-cols-6 xl:grid-flow-col"
+    >
+      <div className="xl:col-span-2">
         <p className="font-extralight">
           {startDate} - {endDate}
         </p>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 xl:col-span-4">
         <h3 className="text-xl tracking-tight font-medium">
           {title} / {company}
         </h3>

@@ -13,7 +13,7 @@ const ExperienceBlock: React.FC<ExperienceProps> = ({
   return (
     <div
       key={id}
-      className="flex flex-col gap-2 xl:grid xl:grid-cols-6 xl:grid-flow-col"
+      className="flex flex-col gap-2 xl:grid xl:grid-cols-6 xl:grid-flow-col xl:rounded xl:p-4"
     >
       <div className="xl:col-span-2">
         <p className="font-extralight">

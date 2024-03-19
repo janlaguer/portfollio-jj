@@ -8,7 +8,7 @@ interface Experiences {
 
 const Experiences: React.FC<Experiences> = ({ experiences }) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 xl:*:hover:brightness-50 xl:hover:*:brightness-105 xl:hover:*:bg-slate-800">
       {experiences.map(
         ({ title, company, startDate, endDate, brief, tags, id }, index) => (
           <ExperienceBlock

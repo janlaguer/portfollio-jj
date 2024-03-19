@@ -13,6 +13,10 @@
   import react from "@assets/icons/react.svg";
   import svelte from "@assets/icons/svelte.svg";
   import tensorflow from "@assets/icons/tensorflow.svg";
+  import astro from "@assets/icons/astro.svg";
+  import nextjs from "@assets/icons/nextjs.svg";
+  import postgre from "@assets/icons/postgresql.svg";
+  import tailwindcss from "@assets/icons/tailwindcss.svg";
 
   let clientX, clientY, isHovering;
 
@@ -20,12 +24,17 @@
     [python, "Python"],
     [javascript, "Javascript"],
     [typescript, "Typescript"],
-    [[html, css], "HTML + CSS"],
+    [html, "HTML"],
+    [css, "CSS"],
+    [tailwindcss, "TailwindCSS"],
     [django, "Django"],
     [react, "React"],
+    [nextjs, "Next.js"],
     [svelte, "Svelte"],
+    [astro, "Astro"],
     [git, "Git"],
     [mysql, "MySQL"],
+    [postgre, "PostgreSQL"],
     [opencv, "OpenCV"],
     [tensorflow, "Tensorflow"],
   ];

@@ -17,26 +17,29 @@
         ref: link,
       };
     });
-    const observer = new IntersectionObserver((entries) => {
-      entries.map((entry) => {
-        linkVisibilityMap[`${entry.target.id}link`]["isIntersecting"] =
-          entry.isIntersecting;
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.map((entry) => {
+          linkVisibilityMap[`${entry.target.id}link`]["isIntersecting"] =
+            entry.isIntersecting;
+        });
 
-      let hasFoundCurrentSection = false;
-      for (const linkID in linkVisibilityMap) {
-        const linkObj = linkVisibilityMap[linkID];
-        if (hasFoundCurrentSection || !linkObj.isIntersecting) {
-          // remove the current class
-          linkObj.show = false;
-          continue;
+        let hasFoundCurrentSection = false;
+        for (const linkID in linkVisibilityMap) {
+          const linkObj = linkVisibilityMap[linkID];
+          if (hasFoundCurrentSection || !linkObj.isIntersecting) {
+            // remove the current class
+            linkObj.show = false;
+            continue;
+          }
+
+          // add the current class
+          linkObj.show = true;
+          hasFoundCurrentSection = true;
         }
-
-        // add the current class
-        linkObj.show = true;
-        hasFoundCurrentSection = true;
-      }
-    });
+      },
+      { rootMargin: "-25% 0px -25% 0px" }
+    );
 
     sections.forEach((section) => observer.observe(section));
     hasMounted = true;

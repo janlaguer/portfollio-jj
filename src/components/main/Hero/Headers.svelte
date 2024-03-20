@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
+  const baseURL = import.meta.env.BASE_URL;
   const sections = document.querySelectorAll(
     "#about, #skills, #experiences, #projects, #blogs"
   );
@@ -62,14 +63,14 @@
     bind:this={aboutLink}
     class:current={hasMounted ? linkVisibilityMap[aboutLink.id].show : false}
     id="aboutlink"
-    href="/#about"
+    href={baseURL + "/#about"}
     >- ABOUT
   </a>
   <a
     bind:this={skillslink}
     class:current={hasMounted ? linkVisibilityMap[skillslink.id].show : false}
     id="skillslink"
-    href="/#skills"
+    href={baseURL + "/#skills"}
     >- SKILLS
   </a>
   <a
@@ -78,21 +79,21 @@
       ? linkVisibilityMap[experiencesLink.id].show
       : false}
     id="experienceslink"
-    href="/#experiences"
+    href={baseURL + "/#experiences"}
     >- EXPERIENCES
   </a>
   <a
     bind:this={projectsLink}
     class:current={hasMounted ? linkVisibilityMap[projectsLink.id].show : false}
     id="projectslink"
-    href="/#projects"
+    href={baseURL + "/#projects"}
     >- PROJECTS
   </a>
   <a
     bind:this={blogsLink}
     class:current={hasMounted ? linkVisibilityMap[blogsLink.id].show : false}
     id="blogslink"
-    href="/#blogs"
+    href={baseURL + "/#blogs"}
     >- BLOGS
   </a>
 </div>

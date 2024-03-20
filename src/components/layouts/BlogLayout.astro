@@ -1,5 +1,12 @@
 ---
 import "@fontsource-variable/inter";
+
+interface Props {
+  frontmatter: { [key: string]: any };
+  headings: { depth: number; text: string; slug: string }[];
+  url: string;
+}
+
 const { frontmatter, headings, url } = Astro.props;
 ---
 
@@ -24,12 +31,15 @@ const { frontmatter, headings, url } = Astro.props;
         </h2>
       </div>
     </nav>
+
     <main class="flex justify-center gap-2 md:divide-x-2 md:divide-slate-800">
       <article class="prose container p-10">
-        <div class="flex gap-4 items-baseline">
+        <div class="flex gap-1 md:gap-4 items-baseline">
           <div class="avatar placeholder">
-            <div class="bg-neutral text-neutral-content rounded-full w-12">
-              <span class="text-xl">{frontmatter.author[0]}</span>
+            <div
+              class="bg-neutral text-neutral-content rounded-full w-6 md:w-12"
+            >
+              <span class="text-sm md:text-xl">{frontmatter.author[0]}</span>
             </div>
           </div>
           <p>{frontmatter.author}</p>

@@ -23,7 +23,10 @@ const postsFrontmatter = posts.map((post) => ({
               <h2 class="font-medium tracking-wide text-lg">{post.title}</h2>
               <p class="font-extralight text-xs">{post.date}</p>
             </div>
-            <p class="font-light">{post.summary}</p>
+            <p class="font-light line-clamp-2">{post.summary}</p>
+            <a href={url} class="link">
+              Read More
+            </a>
           </a>
         </div>
       ))

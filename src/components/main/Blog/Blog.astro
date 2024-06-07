@@ -15,7 +15,7 @@ const postsFrontmatter = posts.map((post) => ({
   <div
     class="flex flex-col gap-8 xl:*:hover:brightness-50 xl:hover:*:brightness-105 xl:hover:*:bg-slate-800"
   >
-    {
+    <!-- {
       postsFrontmatter.map(({ post, url }) => (
         <div class="rounded transition-all xl:p-4">
           <a href={url}>
@@ -30,6 +30,9 @@ const postsFrontmatter = posts.map((post) => ({
           </a>
         </div>
       ))
-    }
+    } -->
+    <div class="p-4">
+      <p class="font-medium text-xl">No Blog Posts Right Now...</p>
+    </div>
   </div>
 </section>

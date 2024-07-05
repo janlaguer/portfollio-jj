@@ -1,35 +1,28 @@
-# Astro Starter Kit: Minimal
+# Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio website made using **Astro** and **TailwindCSS**
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+> Astro was chosen to include components made using React, Svelte, and Astro
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## Project Timeline
 
-Inside of your Astro project, you'll see the following folders and files:
+- Ideation and Design: **1 Week**
+- Development: **1 Week**
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Technologies Used
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Astro
+- React
+- Svelte
+- CSS (TailwindCSS)
+- HTML (syntax used in Astro, React, and Svelte)
+- Javascript + Typescript
+- Git (Github)
+- Figma
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands for Local Development
 
 All commands are run from the root of the project, from a terminal:
 
@@ -42,6 +35,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## References:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Design inspired by Brittany Chiang and mahamsaleem2
+- Designed in Figma and coded in VSCode
+- Font used is Inter
